@@ -1,0 +1,19 @@
+{
+  "name": "ferry-swagger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/Swagger",
+  "scripts": {
+    "test": "mocha",
+    "build": "babel src --out-dir lib --source-maps",
+    "watch": "babel src --out-dir lib --watch --source-maps",
+    "prepublish": "npm run build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^4.7.12"
+  },
+  "dependencies": {
+    "js-yaml": "^3.2.7"
+  }
+}
