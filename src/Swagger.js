@@ -7,9 +7,7 @@ class Swagger {
   constructor(specification) {
     this.filename = specification;
     this.load();
-
-    this.basePath = this.specification.basePath;
-    this.routes = this.specification.paths;
+    this.convert();
   }
 
   load() {
@@ -21,6 +19,12 @@ class Swagger {
       throw new Error('Invalid JSON');
     }
   }
+
+  convert() {
+    this.basePath = this.specification.basePath;
+    this.routes = this.specification.paths;
+  }
+
 };
 
 export default Swagger;
