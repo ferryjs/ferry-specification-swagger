@@ -12,17 +12,17 @@ class Swagger {
 
   load() {
     this.raw = fs.readFileSync(this.filename, 'UTF-8');
-
     try {
-      this.specification = JSON.parse(this.raw);
+      this.source = JSON.parse(this.raw);
     } catch (e) {
       throw new Error('Invalid JSON');
     }
   }
 
   convert() {
-    this.basePath = this.specification.basePath;
-    this.routes = this.specification.paths;
+    this.basePath = this.source.basePath;
+    this.routes = this.source.paths;
+    this.resources = this.source.definitions;
   }
 
 };
