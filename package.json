@@ -1,22 +1,24 @@
 {
   "name": "ferry-swagger",
   "version": "1.0.0",
-  "description": "",
+  "description": "Swagger specification engine adapter for Ferry.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferryjs/ferry-swagger"
+  },
   "main": "lib/Swagger",
   "scripts": {
     "test": "mocha",
     "build": "babel src --out-dir lib --source-maps",
     "watch": "babel src --out-dir lib --watch --source-maps",
-    "postinstall": "npm run build",
-    "prepublish": "npm run build"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "babel": "^4.7.12"
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   },
   "dependencies": {
-    "ferry": "ferryjs/ferry#development",
-    "js-yaml": "^3.2.7",
-    "inflection": "^1.6.0"
+    "ferry": "ferryjs/ferry#development"
+  },
+  "devDependencies": {
+    "babel": "^4.7.12"
   }
 }
