@@ -1,28 +1,14 @@
 'use strict';
 
-import fs from 'fs';
-import yaml from 'js-yaml';
+import {Specification} from 'ferry';
 
-class Swagger {
-  constructor(specification) {
-    this.filename = specification;
-    this.load();
-    this.convert();
-  }
+class Swagger extends Specification {
 
-  load() {
-    this.raw = fs.readFileSync(this.filename, 'UTF-8');
-    try {
-      this.source = JSON.parse(this.raw);
-    } catch (e) {
-      throw new Error('Invalid JSON');
-    }
-  }
-
-  convert() {
+  process() {
     this.basePath = this.source.basePath;
-    this.routes = this.source.paths;
+    this.version = this.source.info.version;
     this.resources = this.source.definitions;
+    this.routes = this.source.paths;
   }
 
 };
