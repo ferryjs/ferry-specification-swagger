@@ -11,6 +11,6 @@ class Swagger extends Specification {
     this.routes = this.source.paths;
   }
 
-};
+}
 
 export default Swagger;
