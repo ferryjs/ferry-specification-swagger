@@ -16,7 +16,9 @@
     "postinstall": "npm run build"
   },
   "dependencies": {
-    "ferry": "ferryjs/ferry#development"
+    "ferry": "ferryjs/ferry#development",
+    "swagger-parser": "^2.2.9",
+    "tv4": "^1.1.9"
   },
   "devDependencies": {
     "babel": "^4.7.12",
